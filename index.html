@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roar: Messenger - The Billion-Dollar Crypto Messaging Revolution</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-black text-gray-200 font-montserrat;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-orbitron;
+            }
+            /* Custom neon glow effect */
+            .text-shadow-neon {
+                text-shadow: 0 0 5px theme('colors.neon-green'),
+                             0 0 5px theme('colors.neon-green'),
+                             0 0 5px theme('colors.neon-green'),
+                             0 0 5px theme('colors.emerald.500'), /* Slightly different shade for depth */
+                             0 0 5px theme('colors.emerald.500');
+            }
+            .section-animate {
+                @apply transition-all duration-1000 ease-out;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+             /* Custom bullet points */
+             .list-neon > li::marker {
+                color: theme('colors.neon-green');
+                font-size: 1.2em;
+             }
+             .list-neon > li {
+                @apply pl-2; /* Adjust spacing if needed */
+             }
+        }
+        /* Optional: Subtle background pattern */
+        /* body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(57, 255, 20, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -1;
+            opacity: 0.5;
+        } */
+    </style>
+    <script>
+      // Basic Tailwind Config for Customizations
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'neon-green': '#39FF14', // Your specific neon green
+              'cyber-black': '#050505', // Slightly darker black
+            },
+            fontFamily: {
+              'orbitron': ['Orbitron', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-slow': 'fadeIn 1.5s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-cyber-black">
+
+    <!-- Header/Navigation (Optional Sticky) -->
+    <nav class="sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-neon-green/20 shadow-lg shadow-neon-green/10">
+        <div class="container mx-auto px-6 py-3 flex justify-center items-center space-x-4 md:space-x-6">
+            <a href="#hero" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Intro</a>
+            <a href="#what-it-is" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">What</a>
+            <a href="#messaging" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Security</a>
+            <a href="#wallet" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Wallet</a>
+            <a href="#market-engine" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Market</a>
+            <a href="#tech-stack" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Tech</a>
+            <a href="#future" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Future</a>
+            <a href="#billion-dollar" class="text-sm md:text-base text-neon-green hover:text-white font-orbitron transition duration-300">Why</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
+         <!-- Neon Lion Placeholder -->
+         <div class="absolute top-5 right-5 md:top-10 md:right-10 w-60 h-60 md:w-60 md:h-60 text-neon-green opacity-60 animate-pulse">
+             <img src="logo.png">
+             
+         </div>
+
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-orbitron text-neon-green text-shadow-neon mb-4 animate-fade-in-slow">
+            The Roar: Messenger
+        </h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-orbitron font-bold mb-8 animate-fade-in-slow" style="animation-delay: 0.3s;">
+            The Billion-Dollar Crypto Messaging Revolution
+        </h2>
+         <div class="animate-fade-in-slow" style="animation-delay: 0.6s;">
+            <a href="#what-it-is" class="mt-6 px-8 py-3 bg-neon-green text-black font-orbitron font-bold rounded-full hover:bg-white hover:shadow-lg hover:shadow-neon-green/40 transition duration-300 text-lg">
+                Explore The Roar
+            </a>
+         </div>
+    </section>
+
+    <!-- Sections Wrapper for Intersection Observer -->
+    <div id="sections-wrapper">
+
+        <!-- 1. What It Is -->
+        <section id="what-it-is" class="container mx-auto px-6 py-20 md:py-28 section-animate">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 text-center">1. What It Is</h2>
+            <div class="max-w-3xl mx-auto space-y-5 text-center text-lg md:text-xl lg:text-2xl text-gray-300">
+                <p>The Roar: The <span class="text-neon-green font-semibold">ultimate crypto super-app</span> for the Web3 era.</p>
+                <p>Messaging + DeFi + AI-driven crypto tools in <span class="text-neon-green font-semibold">one seamless platform</span>.</p>
+                <p>Built to onboard the <span class="text-neon-green font-semibold">next billion users</span>—fast, secure, and futuristic.</p>
+                <p>Starts lean, scales to a <span class="text-neon-green font-semibold">decentralized titan</span>.</p>
+            </div>
+        </section>
+
+        <!-- 2. Hyper-Secure Messaging -->
+        <section id="messaging" class="py-20 md:py-28 bg-gray-900/50 section-animate">
+             <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">2. Hyper-Secure Messaging</h2>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="max-w-xl mx-auto space-y-4">
+                        <ul class="list-neon list-inside space-y-3 text-lg md:text-xl text-gray-200">
+                            <li><span class="font-semibold text-neon-green">Quantum-ready</span>, AI-enhanced chats.</li>
+                            <li>End-to-end encryption (E2EE) with <span class="text-neon-green">post-quantum cryptography</span> (e.g., Kyber).</li>
+                            <li><span class="text-neon-green">AI-powered</span> spam filters and sentiment analysis for group chats.</li>
+                            <li>Decentralized storage via <span class="text-neon-green">IPFS</span>—no central weak point.</li>
+                        </ul>
+                    </div>
+                    <!-- Mockup Placeholder -->
+                    <div class="text-center p-6 border border-neon-green/30 rounded-lg bg-black shadow-xl shadow-neon-green/10">
+                        <img src="htms.png">
+                         <p class="text-sm text-gray-400 mt-3">Imagine seamless, secure, AR-enhanced conversations.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- 3. Next-Gen Crypto Wallet -->
+        <section id="wallet" class="container mx-auto px-6 py-20 md:py-28 section-animate">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">3. Next-Gen Crypto Wallet</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                 <!-- Mockup Placeholder -->
+                 <div class="text-center p-6 border border-neon-green/30 rounded-lg bg-black shadow-xl shadow-neon-green/10 order-2 md:order-1">
+                        
+                        <img src="hnv.png">
+                         <p class="text-sm text-gray-400 mt-3">Your AI co-pilot for navigating the crypto markets.</p>
+                    </div>
+                <div class="max-w-xl mx-auto space-y-4 order-1 md:order-2">
+                    <ul class="list-neon list-inside space-y-3 text-lg md:text-xl text-gray-200">
+                        <li><span class="font-semibold text-neon-green">Multi-chain wallet</span> with AI trading assistant.</li>
+                        <li>Native support for ETH, BTC, SOL—bridges to <span class="text-neon-green">50+ chains</span> via Wormhole.</li>
+                        <li>Send/receive with <span class="text-neon-green">biometric QR</span> or voice commands (“Roar, send 0.1 ETH”).</li>
+                        <li><span class="text-neon-green">AI bot predicts</span> market moves, auto-swaps for max gains.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Real-Time Market Engine -->
+        <section id="market-engine" class="py-20 md:py-28 bg-gray-900/50 section-animate">
+             <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">4. Real-Time Market Engine</h2>
+                 <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="max-w-xl mx-auto space-y-4">
+                        <ul class="list-neon list-inside space-y-3 text-lg md:text-xl text-gray-200">
+                            <li>Predictive alerts powered by <span class="text-neon-green">blockchain oracles</span> and AI.</li>
+                            <li>Live feeds from <span class="text-neon-green">Chainlink + CoinGecko</span>—prices, NFT drops, DeFi yields.</li>
+                            <li>Custom alerts with <span class="text-neon-green">AI foresight</span>: “BTC to hit $100K in 72 hrs—act now.”</li>
+                            <li><span class="text-neon-green">Holographic push notifications</span> (AR-ready for 2030 devices).</li>
+                        </ul>
+                    </div>
+                     <!-- Mockup Placeholder -->
+                     <div class="text-center p-6 border border-neon-green/30 rounded-lg bg-black shadow-xl shadow-neon-green/10">
+                        <img src="target.png">
+                        <p class="text-sm text-gray-400 mt-3">Critical market insights, delivered immersively.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- 5. Tech Stack -->
+        <section id="tech-stack" class="container mx-auto px-6 py-20 md:py-28 section-animate">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">5. Tech Stack</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-lg shadow-neon-green/10 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Frontend</h3>
+                    <p class="text-gray-300">Flutter 4.0—AR/VR-ready UI for iOS, Android, and wearables.</p>
+                </div>
+                 <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-lg shadow-neon-green/10 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Backend</h3>
+                    <p class="text-gray-300">Hybrid JSON API (Firebase) + TON blockchain for scale.</p>
+                </div>
+                 <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-lg shadow-neon-green/10 transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">AI Core</h3>
+                    <p class="text-gray-300">Integrated GPT-5 clone (xAI-built) for chat and trading smarts.</p>
+                </div>
+            </div>
+            <p class="text-center mt-10 text-xl text-gray-400">A futuristic fusion of blockchain, AI, and mobile tech.</p>
+        </section>
+
+        <!-- 6. Billion-Dollar Future -->
+        <section id="future" class="py-20 md:py-28 bg-gray-900/50 section-animate">
+             <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">6. Billion-Dollar Future</h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                     <ul class="list-neon list-inside space-y-3 text-lg md:text-xl text-gray-200">
+                        <li>Decentralized ecosystem with <span class="text-neon-green font-semibold">$ROAR</span> at the core.</li>
+                        <li>P2P messaging evolves to a fully sharded <span class="text-neon-green">TON-based network</span>.</li>
+                        <li>DeFi hub: Stake $ROAR for yield, join <span class="text-neon-green">trustless trading pods</span>.</li>
+                        <li>Web3 gateway: Mint NFTs, launch DAOs, pay with $ROAR—<span class="text-neon-green">all in-chat</span>.</li>
+                    </ul>
+                </div>
+             </div>
+        </section>
+
+        <!-- Why This Is a Billion-Dollar Play -->
+        <section id="billion-dollar" class="container mx-auto px-6 py-20 md:py-28 section-animate">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">Why This Is a Billion-Dollar Play</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-md shadow-neon-green/10">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Scale & Reach</h3>
+                    <p class="text-gray-300">Taps 900M+ Telegram users (TON) + aims for <span class="text-white font-semibold">100M users in 3 years</span>.</p>
+                </div>
+                 <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-md shadow-neon-green/10">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Tech Edge</h3>
+                    <p class="text-gray-300">Quantum crypto + AI + AR = <span class="text-white font-semibold">unmatched in 2025</span>'s app space.</p>
+                </div>
+                <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-md shadow-neon-green/10">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Revenue Streams</h3>
+                    <p class="text-gray-300">$ROAR token (10B supply, $1B potential) + Premium Subs ($10/mo) = <span class="text-white font-semibold">$100M ARR by 2028</span>.</p>
+                </div>
+                 <div class="p-6 bg-black border border-neon-green/30 rounded-lg shadow-md shadow-neon-green/10">
+                    <h3 class="text-2xl font-bold text-neon-green mb-3">Futuristic Hook</h3>
+                    <p class="text-gray-300">Not just an app—a <span class="text-white font-semibold">Web3 lifestyle for the 2030s</span>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-10 border-t border-neon-green/20 mt-16">
+            <p class="text-neon-green text-lg font-orbitron font-bold">April 2025</p>
+           <p class="text-neon-green text-lg font-orbitron mt-2" style="cursor:pointer;" onclick="window.open('https://x.com/TheRoarApp', '_blank');">@TheRoarApp</p>
+
+             <p class="text-sm text-gray-500 mt-4 font-montserrat">The Future of Communication is Here.</p>
+        </footer>
+
+    </div> <!-- End Sections Wrapper -->
+
+    <!-- Simple Intersection Observer for Animations -->
+    <script>
+        const sections = document.querySelectorAll('.section-animate');
+
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    // Optional: unobserve after animation to save resources
+                    // observer.unobserve(entry.target);
+                } else {
+                    // Optional: reset animation if element scrolls out of view
+                     entry.target.classList.remove('section-visible');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
